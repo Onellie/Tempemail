@@ -1,0 +1,25 @@
+generateRandomString(length) {
+  let result = '';
+  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  const charactersLength = characters.length;
+  for (let i = 0; i < length; i++) {
+    result += characters.charAt(Math.floor(Math.random() * charactersLength));
+  }
+  return result;
+}
+
+// Generate a random tempmail address
+function generateTempmail() {
+  const domain = 'example.com'; // Replace with your preferred tempmail domain
+  const usernameLength = 10; // Length of the username part
+
+  const username = generateRandomString(usernameLength);
+  const email = `${username}@${domain}`;
+  return email;
+}
+
+// Usage Example
+const tempmail = generateTempmail();
+console.log(tempmail);
+```
+.
